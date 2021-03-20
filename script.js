@@ -47,7 +47,7 @@ function update()
   
   var didCollide = hasCollided(square1, square2);
   if (didCollide) {
-   canvas.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+   canvas.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 205) + "," + Math.floor(Math.random() * 100) + "," + Math.floor(Math.random() * 325) + ")";
  
     square1.setWidth(square1.theWidth - 2);
     square1.setHeight(square1.theHeight -2);
