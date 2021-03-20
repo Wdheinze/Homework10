@@ -1,3 +1,8 @@
 canvas{
     background-color:rgb(178, 233, 212);
   }
+
+  #myCanvas{
+    border:rgb(230, 173, 68);
+    border-style: double;
+    border-width: 6px; }
