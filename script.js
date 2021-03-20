@@ -46,10 +46,15 @@ function update()
 {
   
   var didCollide = hasCollided(square1, square2);
-  if(didCollide)
-  {
-      window.alert("Ow!")
-}  
+  if (didCollide) {
+   canvas.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+ 
+    square1.setWidth(square1.theWidth - 2);
+    square1.setHeight(square1.theHeight -2);
+    square2.setWidth(square2.theWidth + 4);
+    square2.setHeight(square2.theHeight + 5);
+}
+
 
         var char = event.which || event.keyCode;
         var actualLetter = String.fromCharCode(char);
