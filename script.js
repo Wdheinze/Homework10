@@ -1,3 +1,4 @@
+var square=""
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d"); 
 var x = 50;
@@ -17,7 +18,7 @@ function update()
     {
         drawSquare();
     }
-    setInterval(moveOtherSquare, 5000/60);
+    setInterval(moveOtherSquare, 3000/60);
 
     function drawSquare()
     {
@@ -46,10 +47,10 @@ function update()
   
   var didCollide = hasCollided(square1, square2);
   if(didCollide)
-    {
-      window.alert("ouch!");
-    }
-    
+  {
+      window.alert("Ow!")
+}  
+
         var char = event.which || event.keyCode;
         var actualLetter = String.fromCharCode(char);
         if(actualLetter == "w")
