@@ -1,9 +1,11 @@
-
-var ctx;
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
 var x = 50;
 var y = 50;
 var x2 = 150;
-var y2 = 100;
+var y2 = 150;
+var square1;
+var square2;
 
 createSquares();
 drawSquare();
@@ -11,13 +13,11 @@ setInterval(update, 1000 / 60);
 
 
 function createSquares() {
-    var canvas = document.getElementById("myCanvas");
     console.log(canvas);
-    ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#FAC441";
-    square1 = new Square(x, y, 40, 40, "#FAC441");
-    square2 = new Square(x2, y2, 60, 60, "#D6565C");
+    square1 = new square(x, y, 40, 40, "#FAC441");
+    square2 = new square(x2, y2, 60, 60, "#D6565C");
 }
+
 function update() {
     drawSquare();
 }
@@ -27,6 +27,7 @@ function drawSquare() {
     ctx.clearRect(0, 0, 700, 900);
     ctx.fillStyle = square1.theColor;
     ctx.fillRect(square1.theX, square1.theY, square1.theWidth, square1.theHeight);
+
     ctx.fillStyle = square2.theColor;
     ctx.fillRect(square2.theX, square2.theY, square2.theWidth, square2.theHeight);
 }

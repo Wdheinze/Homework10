@@ -1,5 +1,5 @@
-class Square{
+class square {
 
 
-    
+
 }
