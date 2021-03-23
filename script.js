@@ -9,12 +9,12 @@ createSquares();
 drawSquare();
 setInterval(update, 1000 / 60);
 
+
 function createSquares() {
     var canvas = document.getElementById("myCanvas");
     console.log(canvas);
     ctx = canvas.getContext("2d");
     ctx.fillStyle = "#FAC441";
-    
     square1 = new Square(x, y, 40, 40, "#FAC441");
     square2 = new Square(x2, y2, 60, 60, "#D6565C");
 }
@@ -48,7 +48,7 @@ function getKey(event) {
 
     var didCollide = hasCollided(square1, square2);
     if (didCollide) {
-        canvas.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 205) + "," + Math.floor(Math.random() * 100) + "," + Math.floor(Math.random() * 325) + ")";
+        canvas.style.backgroundColor = "rgb" + Math.floor(Math.random() * 205) + "," + Math.floor(Math.random() * 100) + "," + Math.floor(Math.random() * 325) + ")";
 
         square1.setWidth(square1.theWidth - 2);
         square1.setHeight(square1.theHeight - 2);
