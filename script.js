@@ -21,15 +21,16 @@ function createSquares() {
 function update() {
     drawSquare();
 }
-setInterval(moveOtherSquare, 3000 / 60);
+setInterval(moveOtherSquare, 5000 / 5);
 
 function drawSquare() {
-    ctx.clearRect(0, 0, 700, 900);
+    ctx.clearRect(0, 0, 1000, 1000);
     ctx.fillStyle = square1.theColor;
     ctx.fillRect(square1.theX, square1.theY, square1.theWidth, square1.theHeight);
 
     ctx.fillStyle = square2.theColor;
     ctx.fillRect(square2.theX, square2.theY, square2.theWidth, square2.theHeight);
+
 }
 
 function moveOtherSquare() {
@@ -46,10 +47,9 @@ $(document).ready(function () {
 });
 
 function getKey(event) {
-
     var didCollide = hasCollided(square1, square2);
     if (didCollide) {
-        canvas.style.backgroundColor = "rgb" + Math.floor(Math.random() * 205) + "," + Math.floor(Math.random() * 100) + "," + Math.floor(Math.random() * 325) + ")";
+        canvas.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 205) + "," + Math.floor(Math.random() * 100) + "," + Math.floor(Math.random() * 325) + ")";
 
         square1.setWidth(square1.theWidth - 2);
         square1.setHeight(square1.theHeight - 2);
@@ -78,17 +78,19 @@ function getKey(event) {
 //functions here
 
 function moveUp() {
-    y -= 10;
+    square1.setY(square1.theY - 10);
 }
 function moveDown() {
-    y += 10;
+    square1.setY(square1.theY + 10);
 }
 function moveLeft() {
-    x += 10;
+    square1.setX(square1.theX - 10);
 }
 function moveRight() {
-    x -= 10;
+    square1.setX(square1.theX + 10);
 }
+drawSquare()
+
 //collide 
 function hasCollided(object1, object2) {
     return !(
@@ -97,4 +99,7 @@ function hasCollided(object1, object2) {
         ((object1.x + object1.width) < object2.x) ||
         (object1.x > (object2.x + object2.width))
     );
+
 }
+
+
