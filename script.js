@@ -1,16 +1,20 @@
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+var ctx;
 var x = 50;
 var y = 50;
 var x2 = 150;
 var y2 = 100;
-ctx.fillStyle = "#FAC441";
+
 createSquares();
 drawSquare();
 setInterval(update, 1000 / 60);
 
 function createSquares() {
+    var canvas = document.getElementById("myCanvas");
+    console.log(canvas);
+    ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#FAC441";
+    
     square1 = new Square(x, y, 40, 40, "#FAC441");
     square2 = new Square(x2, y2, 60, 60, "#D6565C");
 }
