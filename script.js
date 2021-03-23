@@ -1,9 +1,9 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var x = 50;
-var y = 50;
-var x2 = 150;
-var y2 = 150;
+var x = 40;
+var y = 40;
+var x2 = 60;
+var y2 = 60;
 var square1;
 var square2;
 
@@ -70,7 +70,7 @@ function getKey(event) {
         moveLeft();
     }
     if (actualLetter == "d") {
-        moveRight
+        moveRight();
     }
     drawSquare();
 }
